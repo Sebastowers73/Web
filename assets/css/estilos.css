@@ -28,7 +28,7 @@ a:hover {
 
 ::placeholder{ font-style: italic;}
 
-nav .logo-home{ width: 200px;}
+nav .logo-home{ width: 80px;}
 
 .go-to-top-btn {
     position: fixed;
@@ -46,9 +46,6 @@ nav .logo-home{ width: 200px;}
 }
 
 .card-header{
-    max-width: 340px;
+    max-width: 540px;
 }
-    
-
-
 
