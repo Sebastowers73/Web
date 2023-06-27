@@ -56,7 +56,7 @@
             <div class="card mb-3 card-header bg-white">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="./assets/img/card-header-1.jpg" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                        <img src="./assets/img/card-header-1.jpg" class="img-fluid rounded-start" alt="Card valores normales">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -72,7 +72,7 @@
             <div class="card mb-3 card-header bg-white">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="./assets/img/card-header-2.jpg" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                        <img src="./assets/img/card-header-2.jpg" class="img-fluid rounded-start" alt="Card valores altos">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -97,30 +97,33 @@
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">INGRESO MI MEDICION</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="horaIngresada" class="form-label">Hora</label>
-                    <input type="time" class="form-control" id="horaIngresada" placeholder="00:00">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">INGRESO MI MEDICION</h5>            
+                <button type="button" class="btn-close" disabled data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                    <label for="minimaIngresada" class="form-label">Mínima</label>
-                    <input type="number" class="form-control" id="minimaIngresada" placeholder="000">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="horaIngresada" class="form-label">Hora</label>
+                        <input type="time" class="form-control" id="horaIngresada" placeholder="00:00">
+                        <label for="maximaIngresada" class="form-label" id="exampleModalLabelMsg"></label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="minimaIngresada" class="form-label">Mínima</label>
+                        <input type="number" class="form-control" id="minimaIngresada" placeholder="000">
+                        <label for="maximaIngresada" class="form-label" id="exampleModalLabelMinMsg"></label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="maximaIngresada" class="form-label">Máxima</label>
+                        <input type="number" class="form-control" id="maximaIngresada" placeholder="000">
+                        <label for="maximaIngresada" class="form-label" id="exampleModalLabelMaxMsg"></label>
+                    </div>                            
                 </div>
-                <div class="mb-3">
-                    <label for="maximaIngresada" class="form-label">Máxima</label>
-                    <input type="number" class="form-control" id="maximaIngresada" placeholder="000">
-                </div>                            
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"  id="cerrarModal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="grabar">Guardar Medición</button>            
+                </div>            
             </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary"  id="cerrarModal">Cerrar</button>
-            <button type="button" class="btn btn-primary" id="grabar">Guardar Medición</button>
-            </div>
-        </div>
         </div>
     </div>
 
@@ -140,7 +143,7 @@
     <section class="container mt-5">
         <div class="row justify-content-center hstack gap-3">
             <div class="card" style="width: 36rem;">
-                <img src="./assets/img/card-header-3.jpg" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                <img src="./assets/img/card-header-3.jpg" class="img-fluid rounded-start" alt="Card factores">
                 <div class="card-body">
                   <p class="card-text">El riesgo de hipertensión puede aumentar en estos casos:</p>
                   <p class="card-text">🗲 Edad avanzada.</p>
@@ -152,7 +155,7 @@
                 </div>
             </div>
             <div class="card" style="width: 36rem;">
-                <img src="./assets/img/card-header-4.jpg" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                <img src="./assets/img/card-header-4.jpg" class="img-fluid rounded-start" alt="Card reducir riesgos">
                 <div class="card-body">
                     <p class="card-text">Cambios saludables en el estilo de vida:</p>
                     <p class="card-text">🗲 Perder peso.</p>
@@ -178,7 +181,7 @@
                 <div class="card mb-3 card-header bg-white">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="./assets/img/A1.png" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                            <img src="./assets/img/A1.png" class="img-fluid rounded-start" alt="Card Dara Noemi Sosa Ruiz">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -194,7 +197,7 @@
                 <div class="card mb-3 card-header bg-white">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="./assets/img/A2.png" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                            <img src="./assets/img/A2.png" class="img-fluid rounded-start" alt="Card Marisol Neira">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -213,7 +216,7 @@
                 <div class="card mb-3 card-header bg-white">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="./assets/img/A3.png" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                            <img src="./assets/img/A3.png" class="img-fluid rounded-start" alt="Card Gianina Lais Iadanza">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -229,7 +232,7 @@
                 <div class="card mb-3 card-header bg-white">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="./assets/img/A4.png" class="img-fluid rounded-start" alt="Nueva Coleccion">
+                            <img src="./assets/img/A4.png" class="img-fluid rounded-start" alt="Card Juan Sebastian Torres">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
