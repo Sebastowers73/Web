@@ -5,7 +5,12 @@ let modifica = -1;
 
 $(function(){
 
+
+    $("#exampleModal").modal({backdrop: 'static', keyboard: false});
+
     actualizaMedicion();
+
+
     $("#grabar").on("click", function(){
          let medi = localStorage.getItem("medicion");
         if(medi == null){
@@ -17,34 +22,59 @@ $(function(){
         let horaIngresada = $("#horaIngresada").val();
         let minimaIngresada = $("#minimaIngresada").val();
         let maximaIngresada = $("#maximaIngresada").val();
-        $("#horaI").text(horaIngresada);
-        $("#minI").text(minimaIngresada);
-        $("#maxI").text(maximaIngresada);
+
+
+        if (horaIngresada=="") {
+           $("#exampleModalLabelMsg").text("Debe ingresar una Hora para poder registrar");       
+           $("#exampleModalLabelMinMsg").text("");
+           $("#exampleModalLabelMaxMsg").text("");
+        }else if( minimaIngresada==0 ) { 
+            $("#exampleModalLabelMinMsg").text("Debe ingresar una medicion minima valida");
+            $("#exampleModalLabelMsg").text("");        
+            $("#exampleModalLabelMaxMsg").text("");
+        }else if( maximaIngresada==0 ) { 
+            $("#exampleModalLabelMaxMsg").text("Debe ingresar una medicion maxima valida");
+            $("#exampleModalLabelMsg").text("");        
+            $("#exampleModalLabelMinMsg").text("");
+         } else {
+
+            $("#horaI").text(horaIngresada);
+            $("#minI").text(minimaIngresada);
+            $("#maxI").text(maximaIngresada);
         
-        var nuevaMedicion = [ 
-            horaIngresada,
-            minimaIngresada,
-            maximaIngresada
-        ];
+            var nuevaMedicion = [ 
+                horaIngresada,
+                minimaIngresada,
+                maximaIngresada
+            ];
 
-        if(modifica >= 0){
-            medicion.splice(modifica, 0, nuevaMedicion);
-            medicion.splice(modifica+1,1);
-        }else{
-            medicion.push(nuevaMedicion);
+            if(modifica >= 0){
+                medicion.splice(modifica, 0, nuevaMedicion);
+                medicion.splice(modifica+1,1);    
+                $("#exampleModalLabelMsg").text("");        
+                $("#exampleModalLabelMinMsg").text("");
+                $("#exampleModalLabelMaxMsg").text("");
+            }else{
+                medicion.push(nuevaMedicion);
+                $("#exampleModalLabelMsg").text("");
+                $("#exampleModalLabelMinMsg").text("");
+                $("#exampleModalLabelMaxMsg").text("");
+            }
+            modifica = -1;
+            localStorage.setItem("medicion", JSON.stringify(medicion));
+            actualizaMedicion();
+        
+            $("#exampleModal input").val("");
+            $("#exampleModal").modal("hide");
         }
-        modifica = -1;
-        localStorage.setItem("medicion", JSON.stringify(medicion));
-        actualizaMedicion();
-
-        $("#exampleModal input").val("");
-        $("#exampleModal").modal("hide");
-
 
     });
 
     $("#cerrarModal").on("click", function(){
         $("#exampleModal input").val("");
+        $("#exampleModalLabelMsg").text("");  
+        $("#exampleModalLabelMinMsg").text("");
+        $("#exampleModalLabelMaxMsg").text("");
         $("#exampleModal").modal("hide");
     });
 
@@ -129,3 +159,16 @@ function eliminarFila(index) {
       $("#exampleModal").modal("show");
 
   }
+
+
+
+
+  function validaHora(horaIngresada)
+{
+    let hora = horaIngresada;
+ 	if (hora=="") {
+        $("#exampleModalLabelMsg").text("Debe ingresar una Hora para poder registrar");
+        alert("pera");
+	}
+}
+
